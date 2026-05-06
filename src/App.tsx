@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { HomePage } from "@/pages/HomePage";
@@ -11,7 +11,7 @@ import { NewsPage } from "@/pages/NewsPage";
 
 export default function App() {
   return (
-    <>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Navbar />
       <main className="pt-20">
         <Routes>
@@ -26,6 +26,6 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
-    </>
+    </BrowserRouter>
   );
 }
